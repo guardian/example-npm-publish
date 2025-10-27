@@ -1,0 +1,8 @@
+{
+  "name": "@guardian/example-npm-publish",
+  "version": "0.0.0",
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js"
+}

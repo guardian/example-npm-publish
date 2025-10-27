@@ -1,0 +1,5 @@
+.idea
+mise.toml
+
+# Files produced by `npm pack`
+guardian-example-npm-publish-*.tgz
