@@ -2,9 +2,9 @@ name: Publish Package
 
 on:
   workflow_dispatch:
-  # push:
-  #   tags:
-  #     - "v*"
+  push:
+    tags:
+      - "v*"
 
 permissions:
   id-token: write # Required for OIDC
@@ -23,6 +23,6 @@ jobs:
 
       # Ensure npm 11.5.1 or later is installed
       - name: Update npm
-        run: npm install -g npm@latest
+        run: npm install -g npm@10
       - run: npm ci
       - run: npm publish
