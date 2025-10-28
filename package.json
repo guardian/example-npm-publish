@@ -1,6 +1,9 @@
 {
 	"name": "@guardian/example-npm-publish",
 	"version": "0.0.2",
+	"repository": {
+		"url": "https://github.com/guardian/example-npm-publish"
+	},
 	"files": [
 		"src"
 	],
