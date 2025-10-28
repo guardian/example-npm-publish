@@ -1,15 +1,6 @@
-name: Publish Package
-
+name: publish-package-npm
 on:
-  workflow_dispatch:
-  # push:
-  #   tags:
-  #     - "v*"
-
-permissions:
-  id-token: write # Required for OIDC
-  contents: read
-
+  workflow_call:
 jobs:
   publish:
     runs-on: ubuntu-latest
