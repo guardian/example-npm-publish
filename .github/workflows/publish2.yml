@@ -1,10 +1,10 @@
-name: Publish Package
+name: Publish Package 2
 
 on:
   workflow_dispatch:
-  # push:
-  #   tags:
-  #     - "v*"
+  push:
+    tags:
+      - "v*"
 
 permissions:
   id-token: write # Required for OIDC
