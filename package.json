@@ -1,6 +1,6 @@
 {
 	"name": "@guardian/example-npm-publish",
-	"version": "0.0.5",
+	"version": "0.0.4",
 	"repository": {
 		"url": "https://github.com/guardian/example-npm-publish"
 	},
