@@ -1,17 +1,36 @@
 name: Publish Package
 
 on:
-  workflow_dispatch:
   push:
     tags:
       - "v*"
+  pull_request:
+    types: [labeled, synchronize]
 
 permissions:
   id-token: write # Required for OIDC
   contents: read
 
 jobs:
+  beta-release:
+    if: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'beta-release') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          registry-url: "https://registry.npmjs.org"
+
+      # Ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        run: npm install -g npm@latest
+      - run: npm ci
+      - run: npm publish --tag beta
+
   publish:
+    if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
