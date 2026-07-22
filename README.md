@@ -40,10 +40,10 @@ Below is a screenshot from https://www.npmjs.com/package/@guardian/example-npm-p
 ![img](./npmjs-settings.jpg)
 
 </p>
-</details> 
+</details>
 
 Within the repository, the following requirements exist:
-1. Use NPM version 11.5.1 or higher
+1. Use NPM version 11.5.1 or higher (if you are using Node version 24.5.0 or higher, this will already be the case)
 2. The `name` field in `package.json` must match the package name on npmjs.com (e.g. `@guardian/example-npm-publish`)
 3. The `repository.url` field in `package.json` must match GitHub repository (e.g. `https://github.com/guardian/example-npm-publish`)
 
